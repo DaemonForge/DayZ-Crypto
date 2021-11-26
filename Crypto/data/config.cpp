@@ -36,7 +36,7 @@ class cfgvehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Crypto\data\Metal Bar\data\Cryptocurrency_gold_co.paa"
+			"Crypto\data\Cryptocurrency\data\Cryptocurrency_gold_co.paa"
 		};
 		class DamageSystem
 		{
@@ -190,7 +190,7 @@ class cfgvehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Crypto\data\Metal Bar\data\Cryptocurrency_silver_co.paa"
+			"Crypto\data\Cryptocurrency\data\Cryptocurrency_gold_co.paa"
 		};
 		class DamageSystem
 		{
@@ -256,7 +256,7 @@ class cfgvehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Crypto\data\Metal Bar\data\Cryptocurrency_silver_co.paa"
+			"Crypto\data\Cryptocurrency\data\Cryptocurrency_gold_co.paa"
 		};
 		class DamageSystem
 		{
