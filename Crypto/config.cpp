@@ -21,7 +21,7 @@ class CfgMods
 		hidePicture = 1;
 		name = "Crypto";
 		credits = "";
-		author = "DaemonForge,Tteett";
+		author = "DaemonForge,tteett";
 		authorID = "0"; 
 		version = "1.0.0"; 
 		extra = 0;
@@ -32,25 +32,28 @@ class CfgMods
 			class gameScriptModule
 			{
 				value = "";
-				files[] = {
+				files[] = 
+				{
 					"Crypto/scripts/3_Game"
-					};
+				};
 			};
 			
 			class worldScriptModule
 			{
 				value = "";
-				files[] = {
+				files[] = 
+				{
 					"Crypto/scripts/4_World"
-					};
+				};
 			};
 
 			class missionScriptModule
 			{
 				value = "";
-				files[] = {
+				files[] = 
+				{
 					"Crypto/scripts/5_Mission"
-					};
+				};
 			};
 		};
 	};
