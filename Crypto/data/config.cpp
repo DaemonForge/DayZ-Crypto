@@ -299,7 +299,6 @@ class cfgvehicles
 			};
 		};
 	};
-
 	class Cryptocurrency_ripplePile: Cryptocurrency_ripple
 	{
 		scope=2;
