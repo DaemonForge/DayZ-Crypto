@@ -302,4 +302,70 @@ class cfgvehicles
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_ripple_co.paa"
 		};
 	};
+	class Cryptocurrency_Sack_cardano: Cryptocurrency_Sack_base
+	{
+		scope=2;
+		displayName="Sack Of 50 Cardano Tokens";
+		marketSymbol="ADA";
+		pileCount=20;
+		hiddenSelectionsTextures[]=
+		{
+			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_cardano_co.paa"
+		};
+	};
+	class Cryptocurrency_Sack_dogecoin: Cryptocurrency_Sack_base
+	{
+		scope=2;
+		displayName="Sack Of 50 Dogecoin Tokens";
+		marketSymbol="DOGE";
+		pileCount=20;
+		hiddenSelectionsTextures[]=
+		{
+			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_dogecoin_co.paa"
+		};
+	};
+	class Cryptocurrency_Sack_shiba: Cryptocurrency_Sack_base
+	{
+		scope=2;
+		displayName="Sack Of 50 Shiba Inu Tokens";
+		marketSymbol="SHIB";
+		pileCount=20;
+		hiddenSelectionsTextures[]=
+		{
+			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_shiba_co.paa"
+		};
+	};
+	class Cryptocurrency_Sack_binance: Cryptocurrency_Sack_base
+	{
+		scope=2;
+		displayName="Sack Of 50 Binance Tokens";
+		marketSymbol="BNB";
+		pileCount=20;
+		hiddenSelectionsTextures[]=
+		{
+			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_binance_co.paa"
+		};
+	};
+	class Cryptocurrency_Sack_solana: Cryptocurrency_Sack_base
+	{
+		scope=2;
+		displayName="Sack Of 50 Solana Tokens";
+		marketSymbol="SOL";
+		pileCount=20;
+		hiddenSelectionsTextures[]=
+		{
+			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_solana_co.paa"
+		};
+	};
+	class Cryptocurrency_Sack_stellar: Cryptocurrency_Sack_base
+	{
+		scope=2;
+		displayName="Sack Of 50 Stellar Lumen Tokens";
+		marketSymbol="XLM";
+		pileCount=20;
+		hiddenSelectionsTextures[]=
+		{
+			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_stellar_co.paa"
+		};
+	};
 };
