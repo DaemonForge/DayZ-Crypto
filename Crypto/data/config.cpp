@@ -269,4 +269,37 @@ class cfgvehicles
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_bitcoin_co.paa"
 		};
 	};
+	class Cryptocurrency_Sack_ethereum: Cryptocurrency_Sack_base
+	{
+		scope=2;
+		displayName="Sack Of 50 Ethereum Tokens";
+		marketSymbol="ETH";
+		pileCount=20;
+		hiddenSelectionsTextures[]=
+		{
+			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_ethereum_co.paa"
+		};
+	};
+	class Cryptocurrency_Sack_litecoin: Cryptocurrency_Sack_base
+	{
+		scope=2;
+		displayName="Sack Of 50 Litecoin Tokens";
+		marketSymbol="LTC";
+		pileCount=20;
+		hiddenSelectionsTextures[]=
+		{
+			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_litecoin_co.paa"
+		};
+	};
+	class Cryptocurrency_Sack_ripple: Cryptocurrency_Sack_base
+	{
+		scope=2;
+		displayName="Sack Of 50 Ripple Tokens";
+		marketSymbol="XRP";
+		pileCount=20;
+		hiddenSelectionsTextures[]=
+		{
+			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_ripple_co.paa"
+		};
+	};
 };
