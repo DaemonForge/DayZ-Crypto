@@ -8,7 +8,7 @@ PixelShaderID = "Super";
 VertexShaderID = "Super";
 class Stage1
 {
-	texture = "Crypto\data\Cryptocurrency\data\SackClean_nohq.paa";
+	texture = "Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_nohq.paa";
 	uvSource = "tex";
 	class uvTransform
 	{
@@ -56,7 +56,7 @@ class Stage4
 };
 class Stage5
 {
-	texture = "Crypto\data\Cryptocurrency\data\SackClean_smdi.paa";
+	texture = "Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_smdi.paa";
 	uvSource = "tex";
 	class uvTransform
 	{
