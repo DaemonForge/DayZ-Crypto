@@ -49,38 +49,11 @@ class cfgvehicles
 					hitpoints=1000;
 					healthLevels[]=
 					{
-						
-						{
-							1.0, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin.rvmat" }
-						},
-						
-						{
-							0.69999999, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin.rvmat" }
-						},
-						
-						{
-							0.5,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin_damaged.rvmat"
-							}
-						},
-						
-						{
-							0.30000001,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin_damaged.rvmat"
-							}
-						},
-						
-						{
-							0.0,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin_ruined.rvmat"
-							}
-						}
+						{1.0, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin.rvmat" }},
+						{0.69999999, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin.rvmat" }},
+						{0.5,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin_damaged.rvmat"}},
+						{0.30000001,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin_damaged.rvmat"}},
+						{0.0,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin_ruined.rvmat"}}
 					};
 				};
 			};
@@ -112,14 +85,6 @@ class cfgvehicles
 		scope=2;
 		displayName="Bitcoin Token";
 		marketSymbol="BTC";
-	};
-	class Cryptocurrency_bitcoinPile: Cryptocurrency_base
-	{
-		scope=2;
-		displayName="Pile Of Bitcoin Token";
-		marketSymbol="BTC";
-		pileCount=20;
-		model="Crypto\data\Cryptocurrency\CryptocurrencyPile.p3d";
 	};
 	class Cryptocurrency_ethereum: Cryptocurrency_base
 	{
@@ -171,65 +136,14 @@ class cfgvehicles
 					hitpoints=1000;
 					healthLevels[]=
 					{
-						
-						{
-							1.0,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_litecoin.rvmat"
-							}
-						},
-						
-						{
-							0.69999999,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_litecoin.rvmat"
-							}
-						},
-						
-						{
-							0.5,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_litecoin_damaged.rvmat"
-							}
-						},
-						
-						{
-							0.30000001,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_litecoin_damaged.rvmat"
-							}
-						},
-						
-						{
-							0.0,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_litecoin_ruined.rvmat"
-							}
-						}
+						{1.0,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_litecoin.rvmat"}},
+						{0.69999999,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_litecoin.rvmat"}},
+						{0.5,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_litecoin_damaged.rvmat"}},
+						{0.30000001,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_litecoin_damaged.rvmat"}},
+						{0.0,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_litecoin_ruined.rvmat"}}
 					};
 				};
 			};
-		};
-	};
-	class Cryptocurrency_rippleSack: Inventory_Base
-	{
-		scope=2;
-		displayName="Sack Of 50 Ripple Tokens";
-		marketSymbol="XRP";
-		pileCount=50;
-		model="Crypto\data\Cryptocurrency\CryptoBag.p3d";
-		hiddenSelectionsMaterials[]=
-		{
-			"Crypto\data\Cryptocurrency\data\SackClean.rvmat"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"Crypto\data\Cryptocurrency\data\SackClean_CO.paa"
 		};
 	};
 	class Cryptocurrency_ripple: Cryptocurrency_base
@@ -254,57 +168,155 @@ class cfgvehicles
 					hitpoints=1000;
 					healthLevels[]=
 					{
-						
-						{
-							1.0,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_ripple.rvmat"
-							}
-						},
-						
-						{
-							0.69999999,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_ripple.rvmat"
-							}
-						},
-						
-						{
-							0.5,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_ripple_damaged.rvmat"
-							}
-						},
-						
-						{
-							0.30000001,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_ripple_damaged.rvmat"
-							}
-						},
-						
-						{
-							0.0,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_ripple_ruined.rvmat"
-							}
-						}
+						{1.0,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_ripple.rvmat"}},
+						{0.69999999,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_ripple.rvmat"}},
+						{0.5,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_ripple_damaged.rvmat"}},
+						{0.30000001,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_ripple_damaged.rvmat"}},
+						{0.0,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_ripple_ruined.rvmat"}}
 					};
 				};
 			};
 		};
 	};
-	class Cryptocurrency_ripplePile: Cryptocurrency_ripple
+
+//---Cryptocurrency Pile
+	class Cryptocurrency_Pile_base: Inventory_Base
+	{
+		scope=0;
+		displayName="Pile of Cryptocurrency";
+		descriptionShort="";
+		model="Crypto\data\Cryptocurrency\CryptocurrencyPile.p3d";
+		visibilityModifier=0.84999999;
+		itemSize[]={3,3};
+		rotationFlags=16;
+		weight=300;
+		hiddenSelections[]=
+		{
+			"zbytek"
+		};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints=1000;
+					healthLevels[]=
+					{
+						{1.0, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin.rvmat" }},
+						{0.69999999, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin.rvmat" }},
+						{0.5,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin_damaged.rvmat"}},
+						{0.30000001,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin_damaged.rvmat"}},
+						{0.0,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin_ruined.rvmat"}}
+					};
+				};
+			};
+		};
+		class AnimEvents
+		{
+			class SoundWeapon
+			{
+				class pickUpItem_Light
+				{
+					soundSet="pickUpCourierBag_Light_SoundSet";
+					id=796;
+				};
+				class pickUpItem
+				{
+					soundSet="pickUpCourierBag_SoundSet";
+					id=797;
+				};
+			};
+		};
+	};
+	class Cryptocurrency_Pile_bitcoin: Cryptocurrency_Pile_base
+	{
+		scope=2;
+		displayName="Pile Of 50 Bitcoin Tokens";
+		marketSymbol="BTC";
+		pileCount=20;
+	};
+	class Cryptocurrency_Pile_ethereum: Cryptocurrency_Pile_base
+	{
+		scope=2;
+		displayName="Pile Of 50 Ethereum Tokens";
+		marketSymbol="ETH";
+		pileCount=20;
+	};
+	class Cryptocurrency_Pile_litecoin: Cryptocurrency_Pile_base
+	{
+		scope=2;
+		displayName="Pile Of 50 Litecoin Tokens";
+		marketSymbol="LTC";
+		pileCount=20;
+	};
+	class Cryptocurrency_Pile_ripple: Cryptocurrency_Pile_base
 	{
 		scope=2;
 		displayName="Pile Of 50 Ripple Tokens";
 		marketSymbol="XRP";
 		pileCount=50;
-		model="Crypto\data\Cryptocurrency\CryptocurrencyPile.p3d";
+	};
+
+//---Crypocurrency Sack
+	class Cryptocurrency_Sack_base: Inventory_Base
+	{
+		scope=2;
+		displayName="Sack Of Cryptocurrency";
+		descriptionShort="";
+		model="Crypto\data\Cryptocurrency\CryptoBag.p3d";
+		hiddenSelections[]=
+		{
+			"zbytek"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"Crypto\data\Cryptocurrency\data\SackClean.rvmat"
+		};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints=1000;
+					healthLevels[]=
+					{
+						{1.0, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin.rvmat" }},
+						{0.69999999, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin.rvmat" }},
+						{0.5,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin_damaged.rvmat"}},
+						{0.30000001,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin_damaged.rvmat"}},
+						{0.0,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin_ruined.rvmat"}}
+					};
+				};
+			};
+		};
+		class AnimEvents
+		{
+			class SoundWeapon
+			{
+				class pickUpItem_Light
+				{
+					soundSet="pickUpCourierBag_Light_SoundSet";
+					id=796;
+				};
+				class pickUpItem
+				{
+					soundSet="pickUpCourierBag_SoundSet";
+					id=797;
+				};
+			};
+		};
+	};
+	class Cryptocurrency_Sack_bitcoin: Cryptocurrency_Sack_base
+	{
+		scope=2;
+		displayName="Sack Of 50 Bitcoin Tokens";
+		marketSymbol="BTC";
+		pileCount=20;
+		hiddenSelectionsTextures[]=
+		{
+			"Crypto\data\Cryptocurrency\data\SackClean_CO.paa"
+		};
 	};
 };
