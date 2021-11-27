@@ -51,19 +51,11 @@ class cfgvehicles
 					{
 						
 						{
-							1.0,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin.rvmat"
-							}
+							1.0, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin.rvmat" }
 						},
 						
 						{
-							0.69999999,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin.rvmat"
-							}
+							0.69999999, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_bitcoin.rvmat" }
 						},
 						
 						{
@@ -147,46 +139,11 @@ class cfgvehicles
 					hitpoints=1000;
 					healthLevels[]=
 					{
-						
-						{
-							1.0,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_ethereum.rvmat"
-							}
-						},
-						
-						{
-							0.69999999,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_ethereum.rvmat"
-							}
-						},
-						
-						{
-							0.5,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_ethereum_damaged.rvmat"
-							}
-						},
-						
-						{
-							0.30000001,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_ethereum_damaged.rvmat"
-							}
-						},
-						
-						{
-							0.0,
-							
-							{
-								"Crypto\data\Cryptocurrency\data\Cryptocurrency_ethereum_ruined.rvmat"
-							}
-						}
+						{ 1.0, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_ethereum.rvmat" } },
+						{ 0.69999999, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_ethereum.rvmat" } },
+						{ 0.5, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_ethereum_damaged.rvmat" } },
+						{ 0.30000001, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_ethereum_damaged.rvmat" } },
+						{ 0.0, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_ethereum_ruined.rvmat" } }
 					};
 				};
 			};
@@ -203,7 +160,6 @@ class cfgvehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Crypto\data\Cryptocurrency\data\Cryptocurrency_silver_co.paa"
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_gold_co.paa"
 		};
 		class DamageSystem
@@ -260,14 +216,6 @@ class cfgvehicles
 			};
 		};
 	};
-	class Cryptocurrency_ripplePile: Cryptocurrency_ripple
-	{
-		scope=2;
-		displayName="Pile Of 50 Ripple Tokens";
-		marketSymbol="XRP";
-		pileCount=50;
-		model="Crypto\data\Cryptocurrency\CryptocurrencyPile.p3d";
-	};
 	class Cryptocurrency_rippleSack: Inventory_Base
 	{
 		scope=2;
@@ -295,7 +243,7 @@ class cfgvehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"Crypto\data\Cryptocurrency\data\Cryptocurrency_silver_co.paa"
+			"Crypto\data\Cryptocurrency\data\Cryptocurrency_gold_co.paa"
 		};
 		class DamageSystem
 		{
@@ -350,5 +298,14 @@ class cfgvehicles
 				};
 			};
 		};
+	};
+
+	class Cryptocurrency_ripplePile: Cryptocurrency_ripple
+	{
+		scope=2;
+		displayName="Pile Of 50 Ripple Tokens";
+		marketSymbol="XRP";
+		pileCount=50;
+		model="Crypto\data\Cryptocurrency\CryptocurrencyPile.p3d";
 	};
 };

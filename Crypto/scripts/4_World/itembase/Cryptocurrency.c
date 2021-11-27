@@ -7,7 +7,7 @@ class Cryptocurrency_ripple extends Cryptocurrency_base {};
 class Cryptocurrency_base extends ItemBase {
 	
 	protected int m_CryptoPileCount = 0;
-	protected string m_CryptoMarketSymbol = 0;
+	protected string m_CryptoMarketSymbol = "";
 	
 	void Cryptocurrency_base(){
 		
