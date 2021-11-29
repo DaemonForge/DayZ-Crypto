@@ -16,7 +16,15 @@ class cfgvehicles
 {
 	class Inventory_Base;
 //---Cryptocurrency
-	class Cryptocurrency_base: Inventory_Base
+class Cryptocurrency_base: Inventory_Base
+	{
+		scope=0;
+		displayName="Cryptocurrency";
+		marketSymbol="";
+		pileCount=1;
+		
+	};
+	class Cryptocurrency_Coin_base: Cryptocurrency_base
 	{
 		scope=0;
 		displayName="Cryptocurrency";
@@ -80,7 +88,7 @@ class cfgvehicles
 			};
 		};
 	};
-	class Cryptocurrency_bitcoin: Cryptocurrency_base
+	class Cryptocurrency_bitcoin: Cryptocurrency_Coin_base
 	{
 		scope=2;
 		displayName="Bitcoin Token";
@@ -89,11 +97,12 @@ class cfgvehicles
 	class Cryptocurrency_Pile_bitcoin: Cryptocurrency_bitcoin
 	{
 		scope=2;
-		displayName="Pile Of 50 Bitcoin Tokens";
+		displayName="Pile Of 20 Bitcoin Tokens";
 		model="Crypto\data\Cryptocurrency\CryptocurrencyPile.p3d";
 		pileCount=20;
+		weight=1000;
 	};
-	class Cryptocurrency_ethereum: Cryptocurrency_base
+	class Cryptocurrency_ethereum: Cryptocurrency_Coin_base
 	{
 		scope=2;
 		displayName="Ethereum Token";
@@ -128,7 +137,7 @@ class cfgvehicles
 		model="Crypto\data\Cryptocurrency\CryptocurrencyPile.p3d";
 		pileCount=20;
 	};
-	class Cryptocurrency_litecoin: Cryptocurrency_base
+	class Cryptocurrency_litecoin: Cryptocurrency_Coin_base
 	{
 		scope=2;
 		displayName="Litecoin Token";
@@ -163,11 +172,12 @@ class cfgvehicles
 	class Cryptocurrency_Pile_litecoin: Cryptocurrency_litecoin
 	{
 		scope=2;
-		displayName="Pile Of 50 Litecoin Tokens";
+		displayName="Pile Of 20 Litecoin Tokens";
 		model="Crypto\data\Cryptocurrency\CryptocurrencyPile.p3d";
 		pileCount=20;
+		weight=1000;
 	};
-	class Cryptocurrency_ripple: Cryptocurrency_base
+	class Cryptocurrency_ripple: Cryptocurrency_Coin_base
 	{
 		scope=2;
 		displayName="Ripple Token";
@@ -205,16 +215,18 @@ class cfgvehicles
 		displayName="Pile Of 50 Ripple Tokens";
 		model="Crypto\data\Cryptocurrency\CryptocurrencyPile.p3d";
 		pileCount=50;
+		weight=1000;
 	};
 
 //---Crypocurrency Sack
-	class Cryptocurrency_Sack_base: Inventory_Base
+	class Cryptocurrency_Sack_base: Cryptocurrency_base
 	{
 		scope=0;
 		displayName="Sack Of Cryptocurrency";
 		descriptionShort="";
 		model="Crypto\data\Cryptocurrency\CryptoSack.p3d";
 		itemSize[]={3,3};
+		weight=1000;
 		hiddenSelections[]=
 		{
 			"zbytek"
@@ -261,9 +273,10 @@ class cfgvehicles
 	class Cryptocurrency_Sack_bitcoin: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 50 Bitcoin Tokens";
+		displayName="Sack Of 5 Bitcoin Tokens";
 		marketSymbol="BTC";
-		pileCount=20;
+		pileCount=5;
+		weight=300;
 		hiddenSelectionsTextures[]=
 		{
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_bitcoin_co.paa"
@@ -272,9 +285,9 @@ class cfgvehicles
 	class Cryptocurrency_Sack_ethereum: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 50 Ethereum Tokens";
+		displayName="Sack Of 5 Ethereum Tokens";
 		marketSymbol="ETH";
-		pileCount=20;
+		pileCount=5;
 		hiddenSelectionsTextures[]=
 		{
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_ethereum_co.paa"
@@ -283,9 +296,9 @@ class cfgvehicles
 	class Cryptocurrency_Sack_litecoin: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 50 Litecoin Tokens";
+		displayName="Sack Of 10 Litecoin Tokens";
 		marketSymbol="LTC";
-		pileCount=20;
+		pileCount=10;
 		hiddenSelectionsTextures[]=
 		{
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_litecoin_co.paa"
@@ -294,9 +307,10 @@ class cfgvehicles
 	class Cryptocurrency_Sack_ripple: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 50 Ripple Tokens";
+		displayName="Sack Of 100 Ripple Tokens";
 		marketSymbol="XRP";
-		pileCount=20;
+		pileCount=100;
+		weight=3000;
 		hiddenSelectionsTextures[]=
 		{
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_ripple_co.paa"
@@ -305,9 +319,10 @@ class cfgvehicles
 	class Cryptocurrency_Sack_cardano: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 50 Cardano Tokens";
+		displayName="Sack Of 100 Cardano Tokens";
 		marketSymbol="ADA";
-		pileCount=20;
+		pileCount=100;
+		weight=5000;
 		hiddenSelectionsTextures[]=
 		{
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_cardano_co.paa"
@@ -316,9 +331,10 @@ class cfgvehicles
 	class Cryptocurrency_Sack_dogecoin: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 50 Dogecoin Tokens";
+		displayName="Sack Of 1,000 Dogecoin Tokens";
 		marketSymbol="DOGE";
-		pileCount=20;
+		pileCount=1000;
+		weight=10000;
 		hiddenSelectionsTextures[]=
 		{
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_dogecoin_co.paa"
@@ -327,9 +343,10 @@ class cfgvehicles
 	class Cryptocurrency_Sack_shiba: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 50 Shiba Inu Tokens";
+		displayName="Sack Of 10,000,000 Shiba Inu Tokens";
 		marketSymbol="SHIB";
-		pileCount=20;
+		pileCount=10000000;
+		weight=10000;
 		hiddenSelectionsTextures[]=
 		{
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_shiba_co.paa"
@@ -338,9 +355,10 @@ class cfgvehicles
 	class Cryptocurrency_Sack_binance: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 50 Binance Tokens";
+		displayName="Sack Of 10 Binance Tokens";
 		marketSymbol="BNB";
-		pileCount=20;
+		pileCount=10;
+		weight=300;
 		hiddenSelectionsTextures[]=
 		{
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_binance_co.paa"
@@ -349,9 +367,10 @@ class cfgvehicles
 	class Cryptocurrency_Sack_solana: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 50 Solana Tokens";
+		displayName="Sack Of 5 Solana Tokens";
 		marketSymbol="SOL";
-		pileCount=20;
+		pileCount=5;
+		weight=300;
 		hiddenSelectionsTextures[]=
 		{
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_solana_co.paa"
@@ -362,7 +381,8 @@ class cfgvehicles
 		scope=2;
 		displayName="Sack Of 50 Stellar Lumen Tokens";
 		marketSymbol="XLM";
-		pileCount=20;
+		pileCount=50;
+		weight=3000;
 		hiddenSelectionsTextures[]=
 		{
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_stellar_co.paa"
