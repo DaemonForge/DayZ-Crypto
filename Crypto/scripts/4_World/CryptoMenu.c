@@ -9,4 +9,8 @@ class CryptoTraderMenu extends UIScriptedMenu {
 		layoutRoot 				= Widget.Cast(GetGame().GetWorkspace().CreateWidgets(m_LayoutPath));
 		return layoutRoot;
 	}
+	
+	void SetTrader(CryptoTrader trader){
+		
+	}
 }
