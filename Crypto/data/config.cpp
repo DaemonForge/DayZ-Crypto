@@ -331,10 +331,10 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_Sack_dogecoin: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 1,000 Dogecoin Tokens";
+		displayName="Sack Of 10,000 Dogecoin Tokens";
 		marketSymbol="DOGE";
-		pileCount=1000;
-		weight=10000;
+		pileCount=10000;
+		weight=5000;
 		hiddenSelectionsTextures[]=
 		{
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_dogecoin_co.paa"

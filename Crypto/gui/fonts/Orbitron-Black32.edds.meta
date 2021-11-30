@@ -1,0 +1,16 @@
+MetaFileClass {
+ Name "{B209A4AA5776B550}MapLink/scripts/4_World/gui/Orbitron-Black32.edds"
+ Author "desktop-cjp9n6b"
+ ChangeDate -1047729283
+ Configurations {
+  TGAResourceClass PC {
+   SourceFile "Orbitron-Black32.tga"
+  }
+  TGAResourceClass XBOX_ONE : PC {
+  }
+  TGAResourceClass PS4 : PC {
+  }
+  TGAResourceClass LINUX : PC {
+  }
+ }
+}

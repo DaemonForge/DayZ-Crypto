@@ -7,6 +7,34 @@ modded class MissionServer extends MissionBase {
 		string ModFile = "Crypto_types.xml";
 		string Path = "Crypto\\xmls\\";
 		CopyXmlFile(Path + ModFile, ModFile);
+		
+		Print("[Crypto] OnInit");
+		GetCryptoConfig();
+		GetRPCManager().AddRPC( "Crypto", "RPCCryptoConfig", this, SingeplayerExecutionType.Both );
+		
+		
+	}
+	
+	
+	void SpawnCryptoTraders(){
+		for (int i = 0; i < GetCryptoConfig().Traders.Count(); i++){
+			CryptoTrader trader = CryptoTrader.Cast(GetCryptoConfig().Traders.Get(i));
+			if (trader){
+				EntityAI traderObj  = EntityAI.Cast(GetGame().CreateObject(trader.ObjectType,trader.Pos));
+				traderObj.SetOrientation(trader.Ori);
+				for (int j = 0; j < trader.Attachemts.Count(); j++){
+					traderObj.GetInventory().CreateAttachment(trader.Attachemts.Get(i));
+				}
+			}
+		}
+	}
+	
+	
+	void RPCCryptoConfig( CallType type, ref ParamsReadContext ctx, ref PlayerIdentity sender, ref Object target ) {
+		PlayerIdentity RequestedBy = PlayerIdentity.Cast(sender);
+		if (RequestedBy){
+			GetRPCManager().SendRPC("Crypto", "RPCCryptoConfig", new Param1< CryptoConfig >( GetCryptoConfig() ), true, RequestedBy);
+		}
 	}
 	
 	
@@ -64,7 +92,7 @@ modded class MissionServer extends MissionBase {
 					ChangeMade = true;
 					newXmlLines.Insert(" ");
 					newXmlLines.Insert(" ");
-					newXmlLines.Insert("<!-- Created by script its advised not to edit this manually -->");
+					newXmlLines.Insert("    <!-- Created by script its advised not to edit this manually -->");
 					newXmlLines.Insert("    <ce folder=\"ModTypes\">");
 					newXmlLines.Insert("        <file name=\"" + FileName + "\" type=\"" + type + "\" />");
 					newXmlLines.Insert("    </ce>");

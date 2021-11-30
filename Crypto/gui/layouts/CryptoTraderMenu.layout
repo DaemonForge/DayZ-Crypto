@@ -1,0 +1,125 @@
+PanelWidgetClass rootFrame {
+ color 0 0.0588 0.2353 0.8549
+ position 0 0
+ size 1250 800
+ halign center_ref
+ valign center_ref
+ hexactpos 0
+ vexactpos 0
+ hexactsize 1
+ vexactsize 1
+ style rover_sim_colorable
+ {
+  PanelWidgetClass TopBorder {
+   inheritalpha 0
+   ignorepointer 1
+   position 0 0
+   size 1 2
+   halign center_ref
+   hexactpos 0
+   vexactpos 0
+   hexactsize 0
+   vexactsize 1
+   style rover_sim_colorable
+  }
+  PanelWidgetClass BottomBorder {
+   ignorepointer 1
+   size 1 2
+   halign center_ref
+   valign bottom_ref
+   hexactpos 0
+   vexactpos 0
+   hexactsize 0
+   vexactsize 1
+   style rover_sim_colorable
+  }
+  PanelWidgetClass LeftBorder {
+   ignorepointer 1
+   size 2 1
+   valign center_ref
+   hexactpos 0
+   vexactpos 0
+   hexactsize 1
+   vexactsize 0
+   style rover_sim_colorable
+  }
+  PanelWidgetClass RightBorder {
+   ignorepointer 1
+   size 2 1
+   halign right_ref
+   valign center_ref
+   hexactpos 0
+   vexactpos 0
+   hexactsize 1
+   vexactsize 0
+   style rover_sim_colorable
+  }
+  FrameWidgetClass Center {
+   ignorepointer 1
+   position 0 0
+   size 0.98 0.95
+   halign center_ref
+   valign center_ref
+   hexactpos 0
+   vexactpos 0
+   hexactsize 0
+   vexactsize 0
+   {
+    TextWidgetClass Title {
+     ignorepointer 1
+     position 0 0
+     size 1 64
+     halign center_ref
+     hexactpos 0
+     vexactpos 0
+     hexactsize 0
+     vexactsize 1
+     text "Crypto Market"
+     font "gui/fonts/metron-bold28"
+     "text halign" center
+     "text valign" center
+    }
+    FrameWidgetClass StoreFrame {
+     ignorepointer 1
+     size 1 655
+     halign center_ref
+     valign bottom_ref
+     hexactpos 1
+     vexactpos 1
+     hexactsize 0
+     vexactsize 1
+     {
+      ScrollWidgetClass StoreScroll {
+       ignorepointer 1
+       position 0 0
+       size 1 1
+       halign center_ref
+       valign center_ref
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       {
+        GridSpacerWidgetClass StoreGrid {
+         ignorepointer 1
+         position 0 -0.00256
+         size 1 1
+         halign center_ref
+         hexactpos 0
+         vexactpos 0
+         hexactsize 0
+         vexactsize 0
+         Padding 3
+         Margin 3
+         "Size To Content V" 1
+         Columns 2
+         Rows 99
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
