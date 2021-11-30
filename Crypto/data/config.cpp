@@ -15,11 +15,13 @@ class CfgPatches
 class cfgvehicles
 {
 	class Inventory_Base;
+	class Container_Base;
 //---Cryptocurrency
 class Cryptocurrency_base: Inventory_Base
 	{
 		scope=0;
 		displayName="Cryptocurrency";
+		descriptionShort="Bitcoin, first released as open-source software in 2009, is the first decentralized cryptocurrency. Since the release of bitcoin, many other cryptocurrencies have been created.";
 		marketSymbol="";
 		pileCount=1;
 		
@@ -27,7 +29,6 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_Coin_base: Cryptocurrency_base
 	{
 		scope=0;
-		descriptionShort="Bitcoin, first released as open-source software in 2009, is the first decentralized cryptocurrency. Since the release of bitcoin, many other cryptocurrencies have been created.";
 		model="Crypto\data\Cryptocurrency\Cryptocurrency.p3d";
 		visibilityModifier=0.84999999;
 		itemSize[]={1,1};
@@ -223,7 +224,7 @@ class Cryptocurrency_base: Inventory_Base
 		scope=0;
 		displayName="Sack Of Cryptocurrency";
 		model="Crypto\data\Cryptocurrency\CryptoSack.p3d";
-		itemSize[]={3,3};
+		itemSize[]={2,2};
 		weight=1000;
 		hiddenSelections[]=
 		{
@@ -388,13 +389,14 @@ class Cryptocurrency_base: Inventory_Base
 	};
 
 //---Crypocurrency Bag
-	class Cryptocurrency_Bag_base: Cryptocurrency_base
+	class Cryptocurrency_Bag_base: Container_Base
 	{
 		scope=2;
 		displayName="Cryptocurrency Wumbo Bag";
+		descriptionShort="Cryptocurrency wumbo bag for holding all your precious investments in one central location";
 		model="Crypto\data\Cryptocurrency\CryptoBag.p3d";
-		itemSize[]={5,6};
-		itemsCargoSize[]={10,12};
+		itemSize[]={5,8};
+		itemsCargoSize[]={8,10};
 		weight=5000;
 		rotationFlags=2;
 		canBeDigged=1;
