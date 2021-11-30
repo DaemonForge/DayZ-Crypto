@@ -21,6 +21,7 @@ modded class MissionServer extends MissionBase {
 			CryptoTrader trader = CryptoTrader.Cast(GetCryptoConfig().Traders.Get(i));
 			if (trader){
 				EntityAI traderObj  = EntityAI.Cast(GetGame().CreateObject(trader.ObjectType,trader.Pos));
+				traderObj.SetAllowDamage(false);
 				traderObj.SetOrientation(trader.Ori);
 				for (int j = 0; j < trader.Attachemts.Count(); j++){
 					traderObj.GetInventory().CreateAttachment(trader.Attachemts.Get(i));
