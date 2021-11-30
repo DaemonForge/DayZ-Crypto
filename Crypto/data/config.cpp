@@ -27,7 +27,6 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_Coin_base: Cryptocurrency_base
 	{
 		scope=0;
-		displayName="Cryptocurrency";
 		descriptionShort="Bitcoin, first released as open-source software in 2009, is the first decentralized cryptocurrency. Since the release of bitcoin, many other cryptocurrencies have been created.";
 		model="Crypto\data\Cryptocurrency\Cryptocurrency.p3d";
 		visibilityModifier=0.84999999;
@@ -223,7 +222,6 @@ class Cryptocurrency_base: Inventory_Base
 	{
 		scope=0;
 		displayName="Sack Of Cryptocurrency";
-		descriptionShort="";
 		model="Crypto\data\Cryptocurrency\CryptoSack.p3d";
 		itemSize[]={3,3};
 		weight=1000;
@@ -386,6 +384,54 @@ class Cryptocurrency_base: Inventory_Base
 		hiddenSelectionsTextures[]=
 		{
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_stellar_co.paa"
+		};
+	};
+
+//---Crypocurrency Bag
+	class Cryptocurrency_Bag_base: Cryptocurrency_base
+	{
+		scope=2;
+		displayName="Cryptocurrency Wumbo Bag";
+		model="Crypto\data\Cryptocurrency\CryptoBag.p3d";
+		itemSize[]={5,6};
+		itemsCargoSize[]={10,12};
+		weight=5000;
+		rotationFlags=2;
+		canBeDigged=1;
+		allowOwnedCargoManipulation=1;
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints=1000;
+					healthLevels[]=
+					{
+						{1.0, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack.rvmat" }},
+						{0.69999999, { "Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack.rvmat" }},
+						{0.5,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_damaged.rvmat"}},
+						{0.30000001,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_damaged.rvmat"}},
+						{0.0,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_ruined.rvmat"}}
+					};
+				};
+			};
+		};
+		class AnimEvents
+		{
+			class SoundWeapon
+			{
+				class pickUpItem_Light
+				{
+					soundSet="pickUpCourierBag_Light_SoundSet";
+					id=796;
+				};
+				class pickUpItem
+				{
+					soundSet="pickUpCourierBag_SoundSet";
+					id=797;
+				};
+			};
 		};
 	};
 };
