@@ -389,7 +389,7 @@ class Cryptocurrency_base: Inventory_Base
 	};
 
 //---Crypocurrency Bag
-	class Cryptocurrency_Bag_base: Container_Base
+	class Cryptocurrency_Bag: Container_Base
 	{
 		scope=2;
 		displayName="Cryptocurrency Wumbo Bag";

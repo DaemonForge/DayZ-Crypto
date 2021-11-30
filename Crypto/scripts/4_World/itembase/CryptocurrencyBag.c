@@ -1,4 +1,4 @@
-class Cryptocurrency_Bag_base extends Container_Base
+class Cryptocurrency_Bag extends Container_Base
 {
 	override bool IsContainer()
 	{
