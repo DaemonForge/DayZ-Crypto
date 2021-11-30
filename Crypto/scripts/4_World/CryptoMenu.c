@@ -1,3 +1,4 @@
+static ref CryptoTraderMenu m_CryptoTraderMenu;
 class CryptoTraderMenu extends UIScriptedMenu {
 	
 	

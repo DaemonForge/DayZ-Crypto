@@ -1,0 +1,1 @@
+static int CRYPTO_MENU = 1331095959;

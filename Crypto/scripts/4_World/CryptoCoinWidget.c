@@ -1,0 +1,4 @@
+class CryptoCoinWidget  extends ScriptedWidgetEventHandler {
+	
+	
+}
