@@ -91,13 +91,14 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_bitcoin: Cryptocurrency_Coin_base
 	{
 		scope=2;
-		displayName="Bitcoin Token";
+		displayName="Bitcoin";
 		marketSymbol="BTC";
+		pileCount=1;
 	};
 	class Cryptocurrency_Pile_bitcoin: Cryptocurrency_bitcoin
 	{
 		scope=2;
-		displayName="Pile Of 20 Bitcoin Tokens";
+		displayName="20 Bitcoin Tokens";
 		model="Crypto\data\Cryptocurrency\CryptocurrencyPile.p3d";
 		pileCount=20;
 		weight=1000;
@@ -107,6 +108,7 @@ class Cryptocurrency_base: Inventory_Base
 		scope=2;
 		displayName="Ethereum Token";
 		marketSymbol="ETH";
+		pileCount=1;
 		hiddenSelectionsMaterials[]=
 		{
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_ethereum.rvmat"
@@ -133,15 +135,16 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_Pile_ethereum: Cryptocurrency_ethereum
 	{
 		scope=2;
-		displayName="Pile Of 50 Ethereum Tokens";
+		displayName="50 Ethereum";
 		model="Crypto\data\Cryptocurrency\CryptocurrencyPile.p3d";
 		pileCount=20;
 	};
 	class Cryptocurrency_litecoin: Cryptocurrency_Coin_base
 	{
 		scope=2;
-		displayName="Litecoin Token";
+		displayName="Litecoin";
 		marketSymbol="LTC";
+		pileCount=1;
 		hiddenSelectionsMaterials[]=
 		{
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_litecoin.rvmat"
@@ -172,7 +175,7 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_Pile_litecoin: Cryptocurrency_litecoin
 	{
 		scope=2;
-		displayName="Pile Of 20 Litecoin Tokens";
+		displayName="20 Litecoin";
 		model="Crypto\data\Cryptocurrency\CryptocurrencyPile.p3d";
 		pileCount=20;
 		weight=1000;
@@ -180,8 +183,9 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_ripple: Cryptocurrency_Coin_base
 	{
 		scope=2;
-		displayName="Ripple Token";
+		displayName="Ripple";
 		marketSymbol="XRP";
+		pileCount=1;
 		hiddenSelectionsMaterials[]=
 		{
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_ripple.rvmat"
@@ -272,7 +276,7 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_Sack_bitcoin: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 5 Bitcoin Tokens";
+		displayName="5 Bitcoins";
 		marketSymbol="BTC";
 		pileCount=5;
 		weight=300;
@@ -284,7 +288,7 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_Sack_ethereum: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 5 Ethereum Tokens";
+		displayName="5 Ethereum Tokens";
 		marketSymbol="ETH";
 		pileCount=5;
 		hiddenSelectionsTextures[]=
@@ -295,9 +299,9 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_Sack_litecoin: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 10 Litecoin Tokens";
+		displayName="20 Litecoin Tokens";
 		marketSymbol="LTC";
-		pileCount=10;
+		pileCount=20;
 		hiddenSelectionsTextures[]=
 		{
 			"Crypto\data\Cryptocurrency\data\Cryptocurrency_Sack_litecoin_co.paa"
@@ -306,9 +310,9 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_Sack_ripple: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 100 Ripple Tokens";
+		displayName="10,000 Ripple Tokens";
 		marketSymbol="XRP";
-		pileCount=100;
+		pileCount=10000;
 		weight=3000;
 		hiddenSelectionsTextures[]=
 		{
@@ -318,9 +322,9 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_Sack_cardano: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 100 Cardano Tokens";
+		displayName="10,000 Cardano Tokens";
 		marketSymbol="ADA";
-		pileCount=100;
+		pileCount=10000;
 		weight=5000;
 		hiddenSelectionsTextures[]=
 		{
@@ -330,9 +334,9 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_Sack_dogecoin: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 10,000 Dogecoin Tokens";
+		displayName="100,000 Dogecoins";
 		marketSymbol="DOGE";
-		pileCount=10000;
+		pileCount=100000;
 		weight=5000;
 		hiddenSelectionsTextures[]=
 		{
@@ -342,9 +346,9 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_Sack_shiba: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 10,000,000 Shiba Inu Tokens";
+		displayName="100,000,000 Shiba Inu Coins";
 		marketSymbol="SHIB";
-		pileCount=10000000;
+		pileCount=100000000;
 		weight=10000;
 		hiddenSelectionsTextures[]=
 		{
@@ -354,7 +358,7 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_Sack_binance: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 10 Binance Tokens";
+		displayName="10 Binance Tokens";
 		marketSymbol="BNB";
 		pileCount=10;
 		weight=300;
@@ -366,9 +370,9 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_Sack_solana: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 5 Solana Tokens";
+		displayName="10 Solana Tokens";
 		marketSymbol="SOL";
-		pileCount=5;
+		pileCount=10;
 		weight=300;
 		hiddenSelectionsTextures[]=
 		{
@@ -378,9 +382,9 @@ class Cryptocurrency_base: Inventory_Base
 	class Cryptocurrency_Sack_stellar: Cryptocurrency_Sack_base
 	{
 		scope=2;
-		displayName="Sack Of 50 Stellar Lumen Tokens";
+		displayName="10,000 Stellar Lumens";
 		marketSymbol="XLM";
-		pileCount=50;
+		pileCount=10000;
 		weight=3000;
 		hiddenSelectionsTextures[]=
 		{

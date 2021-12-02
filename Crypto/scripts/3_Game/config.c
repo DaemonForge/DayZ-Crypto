@@ -1,12 +1,12 @@
 class CryptoConfig extends Managed {
 	
 	protected static string ConfigDIR = "$profile:Crypto";
-	protected static string ConfigPATH = ConfigDIR + "\\UniversalApi.json";
+	protected static string ConfigPATH = ConfigDIR + "\\Crypto.json";
 	static ref CryptoConfig m_Config;
 	string ConfigVersion = "1";
 	
-	autoptr array<autoptr CryptoCurrencyMap> Currencies = new array<autoptr CryptoCurrencyMap>;
-	autoptr array<autoptr CryptoTrader> Traders = new array<autoptr CryptoTrader>;
+	ref array<ref CryptoCurrencyMap> Currencies = new array<autoptr CryptoCurrencyMap>;
+	ref array<ref CryptoTrader> CryptoTraders = new array<autoptr CryptoTrader>;
 	
 	bool ManagedTypesFile = true;
 	
@@ -14,33 +14,33 @@ class CryptoConfig extends Managed {
 	void Load(){
 		if (GetGame().IsServer()){
 			if (FileExist(ConfigPATH)){ // If config exist load File
-			    JsonFileLoader<CryptoConfig>.JsonLoadFile(ConfigPATH, this);
+			    UApiJSONHandler<CryptoConfig>.FromFile(ConfigPATH, this);
 				LoadCurrencys();
 				
 			} else { // File does not exist create file	
 				MakeDirectory(ConfigDIR);
 				Currencies.Insert(new CryptoCurrencyMap);
-				Traders.Insert(new CryptoTrader);
+				CryptoTraders.Insert(new CryptoTrader);
 				Save();
 			}
 		}
 	}
 	
 	void Save(){
-		JsonFileLoader<CryptoConfig>.JsonSaveFile(ConfigPATH, this);
+		UApiJSONHandler<CryptoConfig>.ToFile(ConfigPATH, this);
 	}
 	
 	void LoadCurrencys(){
 		for (int i = 0; i < Currencies.Count(); i++){
-			UCurrency.Register("Crypto" + Currencies.Get(i).CurrencyCode, Currencies.Get(i).CurrencyValues);
+			UCurrency.InsertNew("Crypto" + Currencies.Get(i).CurrencyCode, Currencies.Get(i).Values);
 		}
 	}
 	
 	
 	bool TraderAtPos(vector pos, string type, out CryptoTrader trader){
-		for (int i = 0; i < Traders.Count(); i++) {
-			if ( Traders.Get(i).ObjectType == type && vector.Distance(Traders.Get(i).Pos, pos) < 2 ){
-				trader = CryptoTrader.Cast(Traders.Get(i));
+		for (int i = 0; i < CryptoTraders.Count(); i++) {
+			if ( CryptoTraders.Get(i).ObjectType == type && vector.Distance(CryptoTraders.Get(i).Pos, pos) < 2 ){
+				trader = CryptoTrader.Cast(CryptoTraders.Get(i));
 				return true;
 			}
 		}
@@ -52,16 +52,16 @@ class CryptoConfig extends Managed {
 class CryptoCurrencyMap extends Managed {
 	
 	string CurrencyCode = "RUB";
-	float Modifier = 1.0;
-	autoptr TStringIntMap CurrencyValues = new TStringIntMap;
+	autoptr array<autoptr UCurrencyValue> Values = new array<autoptr UCurrencyValue>;
 	
 	void CryptoCurrencyMap(){
-		CurrencyValues.Insert("MoneyRuble100", 100);
-		CurrencyValues.Insert("MoneyRuble50", 50);
-		CurrencyValues.Insert("MoneyRuble25", 25);
-		CurrencyValues.Insert("MoneyRuble10", 10);
-		CurrencyValues.Insert("MoneyRuble5", 5);
-		CurrencyValues.Insert("MoneyRuble1", 1);
+		Values = new UCurrency;
+		Values.Insert(new UCurrencyValue("MoneyRuble100", 100));
+		Values.Insert(new UCurrencyValue("MoneyRuble50", 50));
+		Values.Insert(new UCurrencyValue("MoneyRuble25", 25));
+		Values.Insert(new UCurrencyValue("MoneyRuble10", 10));
+		Values.Insert(new UCurrencyValue("MoneyRuble5", 5));
+		Values.Insert(new UCurrencyValue("MoneyRuble1", 1));
 	}
 	
 }
@@ -71,7 +71,7 @@ class CryptoTrader extends Managed {
 	autoptr TStringArray Attachemts = {"BomberJacket_Black", "CargoPants_Blue", "DressShoes_Black"};
 	vector Pos = Vector(3715.95,402.56,5984.85);
 	vector Ori = Vector(-55,0,0);
-	autoptr TStringArray AcceptedCurrencies = {"RUB"};
+	string AcceptedCurrency = "RUB";
 	autoptr TStringArray Cryptos = {"Cryptocurrency_bitcoin", "Cryptocurrency_ethereum", "Cryptocurrency_litecoin", "Cryptocurrency_Sack_ripple", "Cryptocurrency_Sack_cardano", "Cryptocurrency_Sack_dogecoin", "Cryptocurrency_Sack_shiba", "Cryptocurrency_Sack_binance", "Cryptocurrency_Sack_solana","Cryptocurrency_Sack_stellar"};
 }
 

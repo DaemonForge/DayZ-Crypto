@@ -1,5 +1,3 @@
-class Cryptocurrency_Coin_base extends Cryptocurrency_base {};
-class Cryptocurrency_Sack_base extends Cryptocurrency_base {};
 class Cryptocurrency_bitcoin extends Cryptocurrency_Coin_base {};
 class Cryptocurrency_Pile_bitcoin extends Cryptocurrency_bitcoin {};
 class Cryptocurrency_ethereum extends Cryptocurrency_Coin_base {};
@@ -18,6 +16,10 @@ class Cryptocurrency_Sack_shiba extends Cryptocurrency_Sack_base {};
 class Cryptocurrency_Sack_binance extends Cryptocurrency_Sack_base {};
 class Cryptocurrency_Sack_solana extends Cryptocurrency_Sack_base {};
 class Cryptocurrency_Sack_stellar extends Cryptocurrency_Sack_base {};
+
+
+class Cryptocurrency_Coin_base extends Cryptocurrency_base {};
+class Cryptocurrency_Sack_base extends Cryptocurrency_base {};
 
 
 class Cryptocurrency_base extends ItemBase {
@@ -43,8 +45,8 @@ class Cryptocurrency_base extends ItemBase {
 		return m_CryptoMarketSymbol;
 	}
 
-	string GetCryptoPileCount(){
-		return m_CryptoMarketSymbol;
+	int GetCryptoPileCount(){
+		return m_CryptoPileCount;
 	}
 
 };

@@ -1,0 +1,16 @@
+MetaFileClass {
+ Name "{546697545F2FC18B}Crypto/gui/images/crypto.edds"
+ Author "desktop-cjp9n6b"
+ ChangeDate 2005609342
+ Configurations {
+  PNGResourceClass PC {
+   SourceFile "crypto.png"
+  }
+  PNGResourceClass XBOX_ONE : PC {
+  }
+  PNGResourceClass PS4 : PC {
+  }
+  PNGResourceClass LINUX : PC {
+  }
+ }
+}

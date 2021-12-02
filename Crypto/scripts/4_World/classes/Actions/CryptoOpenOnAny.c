@@ -27,7 +27,6 @@ class ActionCryptoOpenOnAny: ActionInteractBase
 		EntityAI theTarget;
 		
 		CryptoTrader trader;
-		//Hive_Terminals Use there own action, to be easier for modders to do Might make a moddable array to allow for modders to add there own objects
 		if ( Class.CastTo(theTarget, target.GetObject()) && GetCryptoConfig().TraderAtPos(theTarget.GetPosition(), theTarget.GetType(), trader) ) {
 			return true;
 		}
@@ -37,7 +36,6 @@ class ActionCryptoOpenOnAny: ActionInteractBase
 	override void OnExecuteServer( ActionData action_data ){
 		super.OnExecuteServer( action_data );
 		
-		//Something should go here for better validation server side? Right now it just checks for the nearest depaturePoint to the player within 50 meters
 	}
 	
 	override void OnExecuteClient( ActionData action_data ){
