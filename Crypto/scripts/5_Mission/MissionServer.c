@@ -11,7 +11,6 @@ modded class MissionServer extends MissionBase {
 		if (!m_Handler){
 			m_Handler = new CyptoMarketHandler("", new TStringArray);
 		}
-		Print(UUtil.GetUTCUnixInt());
 		Print("[Crypto] OnInit");
 		GetCryptoConfig();
 		SpawnCryptoTraders();
@@ -84,7 +83,6 @@ modded class MissionServer extends MissionBase {
 			TStringArray newXmlLines = new TStringArray;
 			TStringArray xmlLines = new TStringArray;
 			xmldata.Split("\n", xmlLines);
-			xmlLines.Debug();
 			bool Found = false;
 			bool ChangeMade = false;
 			for (i = 0; i < xmlLines.Count(); i++){
@@ -104,7 +102,6 @@ modded class MissionServer extends MissionBase {
 					newXmlLines.Insert(" ");
 					newXmlLines.Insert(xmlLines.Get(i));
 				} else {
-					Print(xmlLines.Get(i));
 					newXmlLines.Insert(xmlLines.Get(i));
 				}
 			}

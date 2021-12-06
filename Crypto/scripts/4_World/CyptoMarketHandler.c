@@ -45,7 +45,6 @@ class CyptoMarketHandler extends Managed {
 			bool rValue = m_Cache.Find(currencyCode, value);
 			return rValue;
 		} else {
-			
 			value = -1;
 			return false;
 		}

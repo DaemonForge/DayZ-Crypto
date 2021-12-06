@@ -51,7 +51,7 @@ class CryptoConfig extends Managed {
 
 class CryptoCurrencyMap extends Managed {
 	
-	string CurrencyCode = "RUB";
+	string CurrencyCode = "USD";
 	autoptr array<autoptr UCurrencyValue> Values = new array<autoptr UCurrencyValue>;
 	
 	void CryptoCurrencyMap(){
@@ -71,7 +71,7 @@ class CryptoTrader extends Managed {
 	autoptr TStringArray Attachemts = {"BomberJacket_Black", "CargoPants_Blue", "DressShoes_Black"};
 	vector Pos = Vector(3715.95,402.56,5984.85);
 	vector Ori = Vector(-55,0,0);
-	string AcceptedCurrency = "RUB";
+	string AcceptedCurrency = "USD";
 	autoptr TStringArray Cryptos = {"Cryptocurrency_bitcoin", "Cryptocurrency_ethereum", "Cryptocurrency_litecoin", "Cryptocurrency_Sack_ripple", "Cryptocurrency_Sack_cardano", "Cryptocurrency_Sack_dogecoin", "Cryptocurrency_Sack_shiba", "Cryptocurrency_Sack_binance", "Cryptocurrency_Sack_solana","Cryptocurrency_Sack_stellar"};
 }
 

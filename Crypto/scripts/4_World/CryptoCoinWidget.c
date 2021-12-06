@@ -107,19 +107,12 @@ class CryptoCoinWidget  extends ScriptedWidgetEventHandler {
 		if (m_PreviewItem){
 			m_Name.SetText(m_PreviewItem.GetDisplayName());
 			m_CoinPreveiw.SetItem( m_PreviewItem );
-			
 			m_CoinPreveiw.SetModelPosition( Vector(0.05,0,0) );
-			
 			m_CoinPreveiw.SetModelOrientation( Vector(3,m_YSpin,0) );
-			
 			m_CoinPreveiw.SetPos( 0, 0);
-			
 			m_CoinPreveiw.SetSize( 1, 1);
-			
 			m_CoinPreveiw.SetView( 0 );
-			
 		}
-
 	}
 	
 	void SpinModel(){
