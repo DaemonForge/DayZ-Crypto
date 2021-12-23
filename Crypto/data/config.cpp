@@ -172,6 +172,39 @@ class Cryptocurrency_base: Inventory_Base
 			};
 		};
 	};
+	class Cryptocurrency_doge: Cryptocurrency_Coin_base
+	{
+		scope=2;
+		displayName="DOGECOIN";
+		marketSymbol="DOGE";
+		pileCount=1;
+		hiddenSelectionsMaterials[]=
+		{
+			"Crypto\data\Cryptocurrency\data\Cryptocurrency_doge.rvmat"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Crypto\data\Cryptocurrency\data\Cryptocurrency_gold_co.paa"
+		};
+		class DamageSystem
+		{
+			class GlobalHealth
+			{
+				class Health
+				{
+					hitpoints=1000;
+					healthLevels[]=
+					{
+						{1.0,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_doge.rvmat"}},
+						{0.69999999,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_doge.rvmat"}},
+						{0.5,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_doge_damaged.rvmat"}},
+						{0.30000001,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_doge_damaged.rvmat"}},
+						{0.0,{"Crypto\data\Cryptocurrency\data\Cryptocurrency_doge_ruined.rvmat"}}
+					};
+				};
+			};
+		};
+	};
 	class Cryptocurrency_Pile_litecoin: Cryptocurrency_litecoin
 	{
 		scope=2;
