@@ -5,14 +5,16 @@ modded class MissionServer extends MissionBase {
 	override void OnMissionStart()
 	{
 		super.OnMissionStart();
-		string ModFile = "Crypto_types.xml";
-		string Path = "Crypto\\xmls\\";
-		CopyXmlFile(Path + ModFile, ModFile);
 		if (!m_Handler){
 			m_Handler = new CyptoMarketHandler("", new TStringArray);
 		}
 		Print("[Crypto] OnInit");
 		GetCryptoConfig();
+		if (GetCryptoConfig().ManagedTypesFile){
+			string ModFile = "Crypto_types.xml";
+			string Path = "Crypto\\xmls\\";
+			CopyXmlFile(Path + ModFile, ModFile);
+		}
 		SpawnCryptoTraders();
 		GetRPCManager().AddRPC( "Crypto", "RPCCryptoConfig", this, SingeplayerExecutionType.Both );
 	}
