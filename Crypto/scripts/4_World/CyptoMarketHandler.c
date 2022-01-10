@@ -50,12 +50,12 @@ class CyptoMarketHandler extends Managed {
 		}
 	}
 	
-	void RequestBuyTransaction(string ItemClass, string Currency){
-		 GetRPCManager().SendRPC("Crypto","RPCRequestTransaction",new CryptoPurchaseDetails(ItemClass,Currency,"buy"),true);
+	void RequestBuyTransaction(string itemClass, string cur){
+		 GetRPCManager().SendRPC("Crypto","RPCRequestTransaction",new CryptoPurchaseDetails(itemClass,cur,"buy"),true);
 	}
 	
-	void RequestSellTransaction(string ItemClass, string Currency){
-		 GetRPCManager().SendRPC("Crypto","RPCRequestTransaction",new CryptoPurchaseDetails(ItemClass,Currency,"sell"),true);
+	void RequestSellTransaction(string itemClass, string cur){
+		 GetRPCManager().SendRPC("Crypto","RPCRequestTransaction",new CryptoPurchaseDetails(itemClass,cur,"sell"),true);
 		 
 	}
 	
